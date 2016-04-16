@@ -11,8 +11,9 @@ public class App extends Jooby {
 
   {
 	use(new Jackson());
-	get("/", () -> "Hello World!");
-    use(Greetings.class);
+	assets("/assets/**");
+	assets("/","index.html");
+    use(Todos.class);
   }
 
   public static void main(final String[] args) throws Exception {
