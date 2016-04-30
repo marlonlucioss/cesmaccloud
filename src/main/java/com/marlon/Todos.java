@@ -1,13 +1,19 @@
 package com.marlon;
 
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.List;
-import java.util.ArrayList;
+import org.jooby.Request;
+
+import org.jooby.mvc.Consumes;
+import org.jooby.mvc.Produces;
+import org.jooby.mvc.Body;
 import org.jooby.mvc.Path;
 import org.jooby.mvc.GET;
 import org.jooby.mvc.POST;
 import org.jooby.mvc.DELETE;
 import org.jooby.mvc.PUT;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.List;
+import java.util.ArrayList;
+//import org.junit.Test;
 
 @Path("/todo")
 public class Todos {
@@ -18,21 +24,24 @@ public class Todos {
 
   @GET
   public List getTodoList() {
-	return todoList;
+    return todoList;
   }
+
   @POST
-  public List postTodo(String name) {
-	todoList.add(new Todo(idgen.incrementAndGet(), name));
-	return todoList;
+  @Consumes("application/json")
+  @Produces("application/json")
+  public List addTodo(@Body Todo newTodo) {
+    todoList.add(newTodo);
+    return todoList;
   }
   @DELETE
-  public List deleteTodo(int id) {
-	todoList.remove(position);
-	return todoList;
+  public List deleteTodo(@Body Todo todoToUpdate) {
+    todoList.remove(todoToUpdate);
+    return todoList;
   }
   @PUT
-  public List updateTodo(Todo todo, int position) {
-	todoList.remove(position);
-	return todoList;
+  public List updateTodo(@Body Todo todoToUpdate) {
+    todoList.remove(todoToUpdate);
+    return todoList;
   }
 }

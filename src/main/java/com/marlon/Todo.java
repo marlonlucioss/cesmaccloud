@@ -6,8 +6,12 @@ public class Todo {
 
   public String name;
 
-  public Todo(final int id, final String name) {
+  public Todo(int id,String name) {
     this.id = id;
     this.name = name;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 }
