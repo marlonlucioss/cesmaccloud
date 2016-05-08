@@ -3,9 +3,6 @@ package com.marlon;
 import org.jooby.Jooby;
 import org.jooby.json.Jackson;
 
-/**
- * @author jooby generator
- */
 public class App extends Jooby {
 
 
@@ -19,5 +16,4 @@ public class App extends Jooby {
   public static void main(final String[] args) throws Exception {
     run(App::new, args);
   }
-
 }
