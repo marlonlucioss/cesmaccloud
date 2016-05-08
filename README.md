@@ -319,4 +319,5 @@ Professor: Daniel Fireman
 
 #Miscellaneous
 
-Os outros métodos só constam no código apenas como referência.
+1. Os outros métodos só constam no código apenas como referência.
+2. O javadoc não foi gerado pois não usei uma IDE para desenvolver esse projeto e não achei um bash plugin para gerá-los, mas o código foi todo comentado.
