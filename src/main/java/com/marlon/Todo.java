@@ -1,3 +1,8 @@
+/**
+ * Modelo para Todo
+ * @author Marlon Lúcio
+ */
+
 package com.marlon;
 
 public class Todo {

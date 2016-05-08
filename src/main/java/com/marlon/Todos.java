@@ -17,11 +17,16 @@ import java.util.Map;
 
 @Path("")
 public class Todos {
-
+  /**
+   * Aloca memória dos elementos a serem usados
+   */
   static AtomicInteger idgen = new AtomicInteger();
   public List todoList = new ArrayList<Todo>();
   public Todo todo;
 
+  /**
+   * Método GET que retorna a lista de Todos
+   */
   @GET
   @Path("/todos")
   public List getTodoList() {
@@ -32,7 +37,9 @@ public class Todos {
     todoList.add(new Todo(idgen.incrementAndGet(),"Marlon5"));
     return todoList;
   }
-
+  /**
+   * Método POST que adiciona um novo todo e retorna a lista de Todos atualizada
+   */
   @POST
   @Path("/todos/add")
   public List addTodo(@Body Map newTodo) {
@@ -40,12 +47,18 @@ public class Todos {
     todoList.add(todo);
     return todoList;
   }
+  /**
+   * Método DELETE que deveria deletar um Todo e retornar a lista de Todos atualizada
+   */
   @DELETE
   @Path("/todos/delete")
   public List deleteTodo(@Body Todo todoToUpdate) {
     todoList.remove(todoToUpdate);
     return todoList;
   }
+  /**
+   * Método PUT que deveria atualizar um Todo e retornar a lista de Todos atualizada
+   */
   @PUT
   @Path("/todos/update")
   public List updateTodo(@Body Todo todoToUpdate) {

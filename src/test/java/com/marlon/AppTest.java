@@ -2,9 +2,7 @@ package com.marlon;
 
 import org.junit.Test;
 
-/**
- * @author jooby generator
- */
+
 public class AppTest extends BaseTest {
 
   @Test
