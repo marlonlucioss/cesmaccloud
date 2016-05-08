@@ -311,11 +311,11 @@ assertEquals(5,todoCount);
 
 #Institucional
 
-Instituição: Cesmac
-Curso: Pós Graduação em Engenharia de Software
-Matéria: Tópico Especiais em Engenharia de Software
-Assunto: Cloud Computing
-Professor: Daniel Fireman
+Instituição: Cesmac  
+Curso: Pós Graduação em Engenharia de Software  
+Matéria: Tópico Especiais em Engenharia de Software  
+Assunto: Cloud Computing  
+Professor: Daniel Fireman  
 
 #Miscellaneous
 
