@@ -10,9 +10,9 @@ public class App extends Jooby {
 
 
   {
-	use(new Jackson());
-	assets("/assets/**");
-	assets("/","index.html");
+  	use(new Jackson());
+  	assets("/assets/**");
+  	assets("/","index.html");
     use(Todos.class);
   }
 

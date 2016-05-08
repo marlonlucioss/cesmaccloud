@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:module:1.3" name="com.marlon.marlon-cloud">
   <resources>
-    <resource-root path="..\..\..\..\..\..\public" />
-    <resource-root path="..\..\..\..\..\..\conf" />
-    <resource-root path="..\..\..\..\..\classes" />
+    <resource-root path="../../../../../../public" />
+    <resource-root path="../../../../../../conf" />
+    <resource-root path="../../../../../classes" />
     <artifact name="org.jooby:jooby:0.16.0" />
     <artifact name="org.slf4j:slf4j-api:1.7.7" />
     <artifact name="com.typesafe:config:1.3.0" />

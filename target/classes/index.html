@@ -2,10 +2,27 @@
 
 <html>
 <body>
-<input>
+<input id="text" value="Marlon">
+<button id="submit">Add</button>
 </body>
 </html>
 
-<script>
+<script type"text/javascript">
+
+  (function(){
+    var submit = document.getElementById("submit");
+    var http = new XMLHttpRequest();
+    var obj = {};
+
+    submit.onclick = function(){
+
+      obj.name = document.getElementById("text").value;
+      http.open("post","/todos/add",true);
+      http.setRequestHeader("Content-Type","application/json");
+      http.send(JSON.stringify(obj));
+
+    };
+
+  }());
 
 </script>

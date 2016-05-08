@@ -13,33 +13,42 @@ import org.jooby.mvc.PUT;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 //import org.junit.Test;
 
-@Path("/todo")
+@Path("")
 public class Todos {
 
   static AtomicInteger idgen = new AtomicInteger();
   public List todoList = new ArrayList<Todo>();
-  private int position;
+  public Todo todo;
 
   @GET
+  @Path("/todos")
   public List getTodoList() {
+    todoList.add(new Todo(idgen.incrementAndGet(),"Marlon1"));
+    todoList.add(new Todo(idgen.incrementAndGet(),"Marlon2"));
+    todoList.add(new Todo(idgen.incrementAndGet(),"Marlon3"));
+    todoList.add(new Todo(idgen.incrementAndGet(),"Marlon4"));
+    todoList.add(new Todo(idgen.incrementAndGet(),"Marlon5"));
     return todoList;
   }
 
   @POST
-  @Consumes("application/json")
-  @Produces("application/json")
-  public List addTodo(@Body Todo newTodo) {
-    todoList.add(newTodo);
+  @Path("/todos/add")
+  public List addTodo(@Body Map newTodo) {
+    todo = new Todo(idgen.incrementAndGet(),(String)newTodo.get("name"));
+    todoList.add(todo);
     return todoList;
   }
   @DELETE
+  @Path("/todos/delete")
   public List deleteTodo(@Body Todo todoToUpdate) {
     todoList.remove(todoToUpdate);
     return todoList;
   }
   @PUT
+  @Path("/todos/update")
   public List updateTodo(@Body Todo todoToUpdate) {
     todoList.remove(todoToUpdate);
     return todoList;
