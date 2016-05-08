@@ -271,3 +271,52 @@ adicionamos o novo Todo na lista de Todos e retornamos a lista de Todos atualiza
 todoList.add(todo);
 return todoList;
 ```
+
+##Teste
+
+Foi implementado um teste de unidade usando o JUnit
+
+```java
+package com.marlon;
+
+import org.junit.*;
+import static org.junit.Assert.*;
+import java.util.*;
+
+
+public class TodosTest {
+  @Test
+  public void evaluateGetTodos() {
+    Todos todos = new Todos();
+    List todosList = todos.getTodoList();
+    int todoCount = todosList.size();
+    assertEquals(5,todoCount);
+  }
+}
+```
+
+onde:
+
+Foi criado uma nova instancia de um Todo, chamamos o método GET e colocamos em uma variável, como também o tamanho da lista retornada.
+```java
+Todos todos = new Todos();
+List todosList = todos.getTodoList();
+int todoCount = todosList.size();
+```
+
+e testamos se a quantidade de Todos que consta na lista, corresponde ao que foi definido no corpo da implementação do método GET em Todos.java
+```java
+assertEquals(5,todoCount);
+```
+
+#Institucional
+
+Instituição: Cesmac
+Curso: Pós Graduação em Engenharia de Software
+Matéria: Tópico Especiais em Engenharia de Software
+Assunto: Cloud Computing
+Professor: Daniel Fireman
+
+#Miscellaneous
+
+Os outros métodos só constam no código apenas como referência.
